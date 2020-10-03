@@ -23,8 +23,6 @@ parser.add_argument('--patience', default = 3, type = int)
 
 parser.add_argument("--use-crf", action="store_true", help="use crf layer")
 
-parser.add_argument("--train-with-dev", action="store_true", help="train-with-dev")
-
 parser.add_argument("--debug", action="store_true", help="debug")
 
 parser.add_argument("--log-file", default = "./code/flair/resources/tasks/conll_03/test_results.csv", type = str,help="the file to store resutls")
@@ -78,7 +76,7 @@ from flair.trainers import ModelTrainer
 trainer: ModelTrainer = ModelTrainer(tagger, corpus)
 folder='./code/flair/resources/taggers/{}'.format(args.exp_save_name)
 results = trainer.train(folder,
-              train_with_dev=args.train_with_dev, # we should not use this... ... for now. at least.   
+              train_with_dev=False,
               max_epochs=args.train_epochs,
               mini_batch_size=args.mini_batch_size,
               patience=args.patience,
