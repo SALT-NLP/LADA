@@ -1,9 +1,9 @@
-import logging
+import logging as log
 import os
 
 import random
 
-logger = logging.getLogger(__name__)
+logger = log.getLogger(__name__)
 
 
 class InputExample(object):

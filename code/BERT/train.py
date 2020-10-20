@@ -7,7 +7,7 @@ this model has these functions:
 
 import argparse
 import glob
-import logging
+import logging as log
 import os
 import random
 import time
@@ -30,7 +30,7 @@ from tensorboardX import SummaryWriter
 
 from bert_models import BertModel4Mix
 
-logger = logging.getLogger(__name__)
+logger = log.getLogger(__name__)
 
 MODEL_CLASSES = {"bert": (BertConfig, BertForTokenClassification, BertTokenizer)}
 
@@ -590,19 +590,19 @@ def main():
     if (os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train and not args.overwrite_output_dir):
         raise ValueError( "Output directory ({}) already exists and is not empty. Use --overwrite_output_dir to overcome.".format(args.output_dir))
     
-    logger.setLevel(logging.INFO)
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s -   %(message)s", datefmt="%m/%d/%Y %H:%M:%S")
+    logger.setLevel(log.INFO)
+    formatter = log.Formatter("%(asctime)s - %(levelname)s - %(name)s -   %(message)s", datefmt="%m/%d/%Y %H:%M:%S")
     
     if not os.path.exists(args.output_dir):
             os.makedirs(args.output_dir)
             
             
-    fh = logging.FileHandler(args.output_dir  +'/' + str(args.train_examples)+'-' + 'log.txt')
-    fh.setLevel(logging.INFO)
+    fh = log.FileHandler(args.output_dir  +'/' + str(args.train_examples)+'-' + 'log.txt')
+    fh.setLevel(log.INFO)
     fh.setFormatter(formatter)
 
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.INFO)
+    ch = log.StreamHandler()
+    ch.setLevel(log.INFO)
     ch.setFormatter(formatter)
 
     logger.addHandler(ch)

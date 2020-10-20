@@ -1,4 +1,4 @@
-import logging
+import logging as log
 import os
 
 import numpy as np
@@ -9,7 +9,7 @@ from torch.utils.data import (DataLoader, Dataset, RandomSampler,
                               SequentialSampler, TensorDataset)
 from transformers import *
 
-logger = logging.getLogger(__name__)
+logger = log.getLogger(__name__)
 
 
 class InputExample(object):
