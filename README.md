@@ -5,7 +5,7 @@ This repo contains codes for the following paper:
 
 *Jiaao Chen\*, Zhenghui Wang\*, Ran Tian, Zichao Yang, Diyi Yang*:  Local Additivity Based Data Augmentation for Semi-supervised NER. In Proceedings of The 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP'2020)
 
-If you would like to refer to it, please cite the paper mentioned above. 
+[[Read the Paper]](https://arxiv.org/abs/2010.01677)
 
 
 ## Getting Started
